@@ -106,11 +106,16 @@ async function loadWindow () {
     let width = displays[display].workArea.width
     let height = displays[display].workArea.height
     let size = width + 'x' + height
-    
+    let x = displays[display].workArea.x
+    let y = displays[display].workArea.y
+    console.log(JSON.stringify(displays,null,2))
     window = oak.load({
       // url: remoteUrl,
       url: `http://localhost:${port}/`,
       ontop: false,
+      size: size,
+      x: x,
+      y: y,
       insecure: true,
       flags: ['enable-vp8-alpha-playback'],
       sslExceptions: ['localhost','*.googleapis.com'],
