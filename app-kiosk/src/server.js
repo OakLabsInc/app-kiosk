@@ -102,14 +102,22 @@ async function loadWindow () {
       message: `Started on port ${port}`
     })
 
+    let width = displays[display].workArea.width
+    let height = displays[display].workArea.height
+    let size = width + 'x' + height
+
     window = oak.load({
       // url: remoteUrl,
       url: `http://localhost:${port}/`,
-      ontop: false,
+      ontop: true,
+      size: size,
+      x: 0,
+      y: 0,
       insecure: true,
       flags: ['enable-vp8-alpha-playback'],
       sslExceptions: ['localhost','*.googleapis.com'],
       background: '#ffffff',
+
       scripts: [
         {
           name: 'lodash',
