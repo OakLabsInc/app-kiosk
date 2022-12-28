@@ -112,7 +112,6 @@ async function loadWindow () {
       url: `http://localhost:${port}/`,
       ontop: false,
       insecure: true,
-      fullscreen: true,
       flags: ['enable-vp8-alpha-playback'],
       sslExceptions: ['localhost','*.googleapis.com'],
       background: '#ffffff',
