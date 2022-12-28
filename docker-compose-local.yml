@@ -1,0 +1,30 @@
+version: '2.1'
+services:
+  app-cups:
+    build: ./app-cups
+    image: oaklabs/app-cups:commonos
+    network_mode: host
+    devices:
+      - /dev/bus
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+    ports:
+      - '9631:9631'
+  
+  app-kiosk:
+    build: ./app-kiosk
+    image: oaklabs/app-payment:commonos
+    network_mode: host
+    devices:
+      - /dev/dri
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/shm:/dev/shm
+    environment:
+      - PORT=80
+      - DISPLAY=:0
+      - PAYMENT_PORT=9001
+      - TERMINAL_IP=192.168.31.26
+      - TZ=America/Los_Angeles
+      - NODE_ENV=production
+      - REMOTE_URL=https://storage.googleapis.com/static.oak.host/verifone-demos/poc/index.html

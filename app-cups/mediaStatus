@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ipptool -tv ipp://localhost:9631/printers/TM-T88V get-printer-attributes.test | grep printer-state-reasons | sed 's/^.* //g'

@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  app-cups:
+    build: .
+    image: oaklabs/app-cups:commonos
+    network_mode: host
+    devices:
+      - /dev/bus
+    volumes:
+      - /var/run/dbus:/var/run/dbus
+    ports:
+      - '9631:9631'
