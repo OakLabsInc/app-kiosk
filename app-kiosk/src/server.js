@@ -22,7 +22,7 @@ if(process.env.NODE_ENV === 'local') {
 }
 
 let publicPath = join(__dirname, 'public')
-let viewsPath = join(__dirname, 'views')
+
 
 console.log('VERSIONS: ', process.versions)
 
@@ -101,7 +101,8 @@ async function loadWindow () {
     console.log({
       message: `Started on port ${port}`
     })
-
+    let displays = oak.getDisplays()
+    let display = parseInt(process.env.DISPLAY_ID) || 0
     let width = displays[display].workArea.width
     let height = displays[display].workArea.height
     let size = width + 'x' + height
@@ -109,7 +110,7 @@ async function loadWindow () {
     window = oak.load({
       // url: remoteUrl,
       url: `http://localhost:${port}/`,
-      ontop: true,
+      ontop: false,
       size: size,
       x: 0,
       y: 0,
