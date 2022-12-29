@@ -2,7 +2,7 @@ version: '2.1'
 services:
   app-cups:
     build: ./app-cups
-    image: oaklabs/app-cups:commonos
+    image: oaklabs/app-cups:latest
     network_mode: host
     devices:
       - /dev/bus
@@ -13,7 +13,7 @@ services:
   
   app-kiosk:
     build: ./app-kiosk
-    image: oaklabs/app-payment:commonos
+    image: oaklabs/app-kiosk:latest
     network_mode: host
     devices:
       - /dev/dri

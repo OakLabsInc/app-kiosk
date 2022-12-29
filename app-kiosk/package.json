@@ -10,10 +10,10 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
+    "electron": "^22.0.0",
+    "electron-rebuild": "^3.2.9",
     "express": "^4.18.2",
-    "minimist": "^1.2.5",
-    "electron": "^13.1.7",
-    "electron-rebuild": "^2.3.5",
-    "libxmljs": "^0.19.7"
+    "libxmljs": "^0.19.10",
+    "minimist": "^1.2.5"
   }
 }
