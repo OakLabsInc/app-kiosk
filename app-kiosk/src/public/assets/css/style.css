@@ -4457,7 +4457,7 @@ blockquote:before{
     opacity:0;
     background:#192330;
     -webkit-transition:.3s ease-in-out;
-    transition:.3s ease-in-out: 
+    transition:.3s ease-in-out;
 }
 .single-for-img img{
     width:100%;
