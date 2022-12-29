@@ -17,7 +17,8 @@ exapp.get('/', function(req, res) {
   res.sendFile(join(__dirname, 'src','public', 'index.html'));
 });
 
-
+console.log('VERSIONS: ', process.versions)
+console.log('ENV: ', process.env)
 function createWindow() {
   let displays = screen.getAllDisplays();
   const win = new BrowserWindow({
