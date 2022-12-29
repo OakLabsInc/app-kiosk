@@ -1,6 +1,5 @@
 version: '2.1'
-volumes:
-  xserver:
+
 services:
   app-cups:
     build: ./app-cups
@@ -25,14 +24,17 @@ services:
       - /dev/dri
     group_add:
       - video
+    ports:
+      - '80'
+  browser:
+    image: bh.cr/balenalabs/browser-amd64 
+    privileged: true 
+    network_mode: host
+    ports:
+        - '5011' # management API (optional)
+        - '35173' # Chromium debugging port (optional)
     volumes:
-      - 'xserver:/tmp/.X11-unix'
-  xserver:
-    image: balenablocks/xserver
-    restart: always
-    privileged: true
-    volumes:
-      - 'xserver:/tmp/.X11-unix'
+      - 'settings:/data' # Only required if using PERSISTENT flag (see below)
   wifi-connect:
     image: balenablocks/wifi-connect:amd64
     restart: always
