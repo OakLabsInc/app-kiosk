@@ -1,19 +1,19 @@
 {
-  "name": "electron-in-docker",
+  "name": "app-kiosk",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.js",
+  "main": "main.js",
   "scripts": {
-    "start": "electron . --no-sandbox"
+    "start": "node_modules/.bin/electron . --no-sandbox --trace-warnings"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimist": "^1.2.5",
     "electron": "^13.1.7",
     "electron-rebuild": "^2.3.5",
     "libxmljs": "^0.19.7"
-  },
-  "dependencies": {
-    "minimist": "^1.2.5"
   }
 }
