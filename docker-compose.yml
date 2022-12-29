@@ -20,6 +20,7 @@ services:
     build: ./app-kiosk
     restart: always
     network_mode: host
+    privileged: true
     devices:
       - /dev/dri
     group_add:
