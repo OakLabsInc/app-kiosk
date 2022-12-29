@@ -30,12 +30,12 @@ function createWindow() {
     frame: false,
     webPreferences: {
         // preload: path.join(__dirname, 'preload.js'),
-        nodeIntegration: true,
+        nodeIntegration: false,
         contextIsolation: false
     }
   });
 
-  win.loadURL('http://localhost:80', {"extraHeaders" : "pragma: no-cache\n"});
+  win.loadURL('http://localhost:80');
 }
 
 app.whenReady().then(() => {
