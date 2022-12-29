@@ -33,8 +33,6 @@ services:
     ports:
         - '5011' # management API (optional)
         - '35173' # Chromium debugging port (optional)
-    volumes:
-      - 'settings:/data' # Only required if using PERSISTENT flag (see below)
   wifi-connect:
     image: balenablocks/wifi-connect:amd64
     restart: always
