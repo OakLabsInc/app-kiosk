@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node_modules/.bin/electron . --no-sandbox --trace-warnings"
+    "start": "electron . --no-sandbox --js-flags=--max-old-space-size=8192"
   },
   "author": "",
   "license": "ISC",
