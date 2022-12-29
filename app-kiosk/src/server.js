@@ -116,9 +116,6 @@ async function loadWindow () {
       size: size,
       x: x,
       y: y,
-      insecure: true,
-      flags: ['enable-vp8-alpha-playback'],
-      sslExceptions: ['localhost','*.googleapis.com'],
       background: '#ffffff',
 
       scripts: [
