@@ -35,7 +35,7 @@ function createWindow() {
     }
   });
 
-  win.loadURL('http://localhost:80');
+  win.loadURL('http://localhost:80', {"extraHeaders" : "pragma: no-cache\n"});
 }
 
 app.whenReady().then(() => {
