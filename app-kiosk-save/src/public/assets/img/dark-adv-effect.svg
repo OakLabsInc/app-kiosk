@@ -1,0 +1,42 @@
+<svg width="452" height="306" viewBox="0 0 452 306" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="15" y="0" width="422" height="306">
+<rect width="422" height="306" transform="matrix(-1 0 0 1 437 0)" fill="#1C1C1C"/>
+</mask>
+<g mask="url(#mask0)">
+<g style="mix-blend-mode:overlay" opacity="0.4">
+<g style="mix-blend-mode:overlay" opacity="0.4">
+<path d="M181.4 89.7314L244.805 89.7314L213.047 144.682L181.4 89.7314Z" fill="white" fill-opacity="0.8"/>
+<path d="M253.299 97.129L276.506 137.204L276.506 137.285L230.01 137.285L253.299 97.129Z" fill="white" fill-opacity="0.5"/>
+<path d="M213.058 25.7987L213.147 25.7987L238.464 69.565L238.464 69.6534L187.741 69.6534L213.058 25.7987Z" fill="white" fill-opacity="0.4"/>
+<path d="M27.2192 161.741L50.5978 161.741L38.8881 181.879L27.2192 161.741Z" fill="white" fill-opacity="0.6"/>
+<path d="M87.9793 132.057L101.981 156.362L73.9775 156.362L73.9775 156.313L87.9793 132.057Z" fill="white" fill-opacity="0.4"/>
+<path d="M108.987 184.836L104.735 192.235L100.468 184.846L108.987 184.836Z" fill="white"/>
+<path d="M25.6677 172.909L31.2515 182.604L20.084 182.604L25.6677 172.909Z" fill="white"/>
+<path d="M51.1455 110.922L86.2434 110.922L68.6945 141.295L51.1455 110.922Z" fill="white" fill-opacity="0.4"/>
+<path d="M40.5167 121.49L40.5781 121.49L58.127 151.863L58.127 151.924L22.9678 151.924L40.5167 121.49Z" fill="white" fill-opacity="0.7"/>
+</g>
+<g style="mix-blend-mode:overlay" opacity="0.5">
+<path d="M224.199 161.061L282.848 161.061L253.473 212.313L224.199 161.061Z" fill="white" fill-opacity="0.8"/>
+<path d="M293.472 169.515L325.647 225.409L325.647 225.522L261.186 225.522L293.472 169.515Z" fill="white" fill-opacity="0.5"/>
+<path d="M21.7901 58.0289L21.8767 58.0289L46.6668 100.741L46.6668 100.827L-3 100.827L21.7901 58.0289Z" fill="white" fill-opacity="0.4"/>
+<path d="M87.7544 221.5L168.011 221.5L127.813 290.972L87.7544 221.5Z" fill="white" fill-opacity="0.6"/>
+<path d="M213.367 160.004L244.277 213.37L182.458 213.37L182.458 213.262L213.367 160.004Z" fill="white" fill-opacity="0.5"/>
+<path d="M208.063 258.81L213.632 268.849L202.536 268.849L208.063 258.81Z" fill="white"/>
+<path d="M93.9172 269.402L106.663 291.532L81.1714 291.532L93.9172 269.402Z" fill="white"/>
+<path d="M127.952 152.028L208.069 152.028L168.01 221.36L127.952 152.028Z" fill="white" fill-opacity="0.6"/>
+<path d="M122.7 161.061L122.803 161.061L152.341 212.21L152.341 212.313L93.1631 212.313L122.7 161.061Z" fill="white" fill-opacity="0.4"/>
+</g>
+<g style="mix-blend-mode:overlay" opacity="0.5">
+<path d="M293.101 151.463L252.973 81.9582L333.236 82.0352L293.101 151.463Z" fill="white" fill-opacity="0.8"/>
+<path d="M277.247 68.0086L285.011 54.5526L285.034 54.539L292.819 68.0236L277.247 68.0086Z" fill="white" fill-opacity="0.5"/>
+<path d="M107.393 76.2264L107.348 76.1497L132.676 32.2485L132.753 32.2042L158.153 76.1984L107.393 76.2264Z" fill="white" fill-opacity="0.9"/>
+<path d="M407.63 197.38L379.964 149.462L435.301 149.515L407.63 197.38Z" fill="white" fill-opacity="0.6"/>
+<path d="M324.676 149.492L352.346 101.627L379.964 149.462L379.88 149.51L324.676 149.492Z" fill="white" fill-opacity="0.5"/>
+<path d="M394.422 109.225L407.27 86.8656L420.161 109.194L394.422 109.225Z" fill="white"/>
+<path d="M435.717 176.258L442.386 164.735L449.031 176.244L435.717 176.258Z" fill="white"/>
+<path d="M354.196 191.066L334.204 156.44L374.165 156.453L354.196 191.066Z" fill="white" fill-opacity="0.6"/>
+<path d="M352.342 215.625L352.293 215.541L379.88 167.724L379.964 167.676L407.63 215.594L352.342 215.625Z" fill="white" fill-opacity="0.4"/>
+</g>
+</g>
+</g>
+</svg>

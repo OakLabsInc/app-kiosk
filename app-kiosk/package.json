@@ -1,45 +1,19 @@
 {
-  "name": "payment-demo-application",
+  "name": "electron-in-docker",
   "version": "1.0.0",
-  "description": "Oak Demo Payment app for OakOS v6.0.x",
-  "main": "src/server.js",
+  "description": "",
+  "main": "src/main.js",
   "scripts": {
-    "start": "node_modules/.bin/oak .",
-    "dev": "env $(cat .env | grep -v '#' | xargs) npm start",
-    "rebuild": "rm -rf node_modules/ package-lock.json && npm i && node_modules/.bin/oak-rebuild $(pwd)",
-    "test": "exit 0;"
+    "start": "electron . --no-sandbox"
   },
-  "engines": {
-    "node": ">=12.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/OakLabsInc/app-payment.git"
-  },
-  "author": "Richard Joffray <richard@joffray.com>",
-  "license": "Apache 2",
-  "bugs": {
-    "url": "https://github.com/OakLabsInc/app-payment/issues"
-  },
-  "homepage": "https://github.com/OakLabsInc/app-payment#readme",
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "oak": "~6.0.1"
+    "electron": "^13.1.7",
+    "electron-rebuild": "^2.3.5",
+    "libxmljs": "^0.19.7"
   },
   "dependencies": {
-    "@oaklabs/platform": "~4.0.0",
-    "axios": "~0.19.2",
-    "body-parser": "^1.19.0",
-    "concat-stream": "^2.0.0",
-    "dotenv": "^8.2.0",
-    "express": "~4.16.3",
-    "fs": "0.0.1-security",
-    "ipp": "^2.0.1",
-    "lodash": "~4.17.11",
-    "path": "^0.12.7",
-    "pdfkit": "^0.11.0",
-    "pug": "~2.0.3",
-    "stylus": "~0.54.5",
-    "uuid": "^3.3.2"
-  },
-  "private": true
+    "minimist": "^1.2.5"
+  }
 }

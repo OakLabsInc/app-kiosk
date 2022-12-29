@@ -1,14 +1,17 @@
----
-  version: '3'
-  services:
-    app-kiosk:
-      build: .
-      image: index.docker.io/oaklabs/app-kiosk:latest
-      devices:
-        - /dev/dri
-      volumes:
-        - /tmp/.X11-unix:/tmp/.X11-unix
-        - /dev/shm:/dev/shm
-        - ./src:/app/src
-      environment:
-        - NODE_ENV=production
+version: '3'
+services:
+  server:
+    build: .
+    image: oaklabs/electron-in-docker:latest
+    network_mode: host
+    privileged: true 
+    devices:
+      # remove if you dont need to share your graphics card explicitely
+      - /dev/dri:/dev/dri
+      - /dev/snd:/dev/snd
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/bus/usb:/dev/bus/usb
+    environment:
+      - NODE_ENV=development
+      - DISPLAY=:0

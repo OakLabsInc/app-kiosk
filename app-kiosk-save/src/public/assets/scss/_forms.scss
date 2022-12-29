@@ -1,0 +1,314 @@
+input::-moz-placeholder {             color: $secondary_color;}
+input::-webkit-input-placeholder {    color: $secondary_color;}
+input:-ms-input-placeholder {         color: $secondary_color;}
+input::-ms-input-placeholder {        color: $secondary_color;}
+input::placeholder {                  color: $secondary_color;}
+textarea::-moz-placeholder {          color: $secondary_color;}
+textarea::-webkit-input-placeholder { color: $secondary_color;}
+textarea:-ms-input-placeholder {      color: $secondary_color;}
+textarea::-ms-input-placeholder {     color: $secondary_color;}
+textarea::placeholder {               color: $secondary_color;}
+
+input[type="text"],input[type="tel"],input[type="email"],input[type="search"],textarea{
+	display: block;
+	width: 100%;
+	height: 50px;
+	padding: 10px 10px 10px 42px;
+	font-family: $font_family;
+	font-size: 16px;
+	line-height: 18px;
+	color: $input_color;
+	background-color: transparent;
+	font-weight: 400;
+	transition: .35s ease;
+	border-radius: $border_radius;
+	letter-spacing: 0.05em;
+}
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="search"],
+textarea{
+	border: 2px solid $input_border_color;
+}
+textarea{
+	resize: none;
+	height: 184px;
+	padding-top: 16px;
+}
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="search"],
+textarea{
+	&:hover,
+	&:focus{
+		border-color: $accent_color;
+		box-shadow: 0px 0px 14px rgba(0,0,0,0.1);
+	}
+}
+
+button,
+button.btn{
+	padding: 0px 30px;
+	height: 50px;
+}
+
+.home-dark{
+	.search-form,
+	.subscribe-form{
+		.inp-form{
+			border-color: rgba(255,255,255,.4);
+			&:hover,
+			&:focus{
+				border-color: $color_green;
+			}
+		}
+	}
+}
+
+/*-------------------- NICE SELECT --------------------*/
+.nice-select{
+	border-radius: $border_radius;
+	color: $input_color;
+	max-width: 100%;
+	.current{
+		font-size: 18px;
+		display: block;
+		max-width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		font-weight: 700;
+	}
+	&:hover {
+		border-color: $accent_color; 
+	}
+	.list{
+		border-radius: $border_radius;
+	}
+}
+.nice-select:active, .nice-select.open, .nice-select:focus {
+  border-color: $accent_color; 
+}
+.nice-select .option.disabled{
+	color: $primary_color;
+}
+
+/*------------------- CONTACT FORM -------------------*/
+.form-cover{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.form-cover li{
+	margin-bottom: 30px;
+	position: relative;
+	&:before{
+		pointer-events: none;
+	}
+}
+.inp-name,
+.inp-phone,
+.inp-email{
+	width: calc(33.33% - 20px);
+}
+.inp-text:before,
+.inp-name:before,
+.inp-phone:before,
+.inp-email:before{
+	content: '';
+	position: absolute;
+	font-family: 'FontAwesome';
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 18px;
+	color: $secondary_color;
+	top: 16px;
+	left: 16px;
+}
+.inp-name:before{
+	content: '\f007';
+}
+.inp-phone:before{
+	content: '\f095';
+}
+.inp-email:before{
+	content: '\f1fa';
+}
+.inp-text:before{
+	content: '\f27b';
+	top: 16px;
+}
+.inp-text{
+	width: 100%;
+}
+.checkbox-wrap{
+	text-align: center;
+	margin-bottom: 50px;
+}
+.checkbox-cover{
+	position: relative;
+	display: inline-block;
+}
+.checkbox-cover p{
+	position: relative;
+	padding-left: 38px;
+	color: $secondary_color;
+}
+.checkbox-cover p:before{
+	content: '';
+	display: inline-block;
+	border: 2px solid $input_border_color;
+	width: 26px;
+	height: 26px;
+	line-height: 22px;
+	font-family: FontAwesome;
+	font-size: 14px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	color: $title_color;
+	border-radius: 0;
+}
+.checkbox-cover input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	margin: 0;
+}
+.checkbox-cover input:checked + p:before{
+	content: '\f00c';
+}
+.btn-form-cover{
+	text-align: center;
+}
+#success_page{
+	color: $title_color;
+}
+#success_page h3{
+	color: $link_color;
+}
+#message{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 100%;
+	text-align: center;
+	color: $link_color;
+	margin: 30px 0;
+}
+#message .error_message{
+	color: #f23849;
+}
+
+/*------------------- WIDGET SEARCH -------------------*/
+.search-form,
+.subscribe-form{
+	position: relative;
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+	i{
+		position: absolute;
+		top: 48%;
+		transform: translateY(-50%);
+		left: 18px;
+		z-index: 2;
+		font-size: 17px;
+		pointer-events: none;
+		color: $secondary_color;
+	}
+	.inp-form{
+		background-color: transparent;
+		border-radius: $border_radius;
+		display: block;
+		border: 2px solid #dbdbdb;
+		transition: .35s ease;
+		color: $secondary_color;
+		font-size: 16px;
+		width: 100%;
+		max-width: 323px;
+		padding: 0 20px 0 44px;
+		font-weight: 700;
+		&:hover{
+			border-color: $accent_color;
+		}
+		&:focus{
+			color: $primary_color;
+			border-color: $accent_color;
+		}
+	}
+	input.inp-form::-moz-placeholder {             color: $secondary_color;}
+	input.inp-form::-webkit-input-placeholder {    color: $secondary_color;}
+	input.inp-form:-ms-input-placeholder {         color: $secondary_color;}
+	input.inp-form::-ms-input-placeholder {        color: $secondary_color;}
+	input.inp-form::placeholder {                  color: $secondary_color;}
+	.btn-form{
+		margin-left: 10px;
+	}
+}
+
+.header-two-search form.subscribe-form{
+	i{
+		color: #fff;
+	}
+	.inp-form::-moz-placeholder {             color: #fff;}
+	.inp-form::-webkit-input-placeholder {    color: #fff;}
+	.inp-form:-ms-input-placeholder {         color: #fff;}
+	.inp-form::-ms-input-placeholder {        color: #fff;}
+	.inp-form::placeholder {                  color: #fff;}
+}
+
+@media(max-width: 1199px){
+	.nice-select .current,
+	.search-form .inp-form, .subscribe-form .inp-form,
+	input[type="text"], input[type="tel"], input[type="email"], input[type="search"], textarea{
+		font-size: 14px;
+	}
+	.search-form,
+	.subscribe-form{
+		i{
+			left: 15px;
+		}
+		.inp-form{
+			padding-left: 38px;
+		}
+	}
+}
+@media(max-width: 767px){
+	.inp-name, .inp-phone, .inp-email {
+		width: 100%;
+	}
+	.form-cover li {
+		margin-bottom: 20px;
+	}
+	#message {
+		margin: 20px 0;
+		padding: 0 15px;
+	}
+	.checkbox-wrap{
+		margin-bottom: 40px;
+	}
+}
+@media(max-width: 575px){
+	.search-form,
+	.subscribe-form{
+		.btn-form{
+			padding: 0px 15px;
+			min-width: 100px;
+		}
+	}
+	.checkbox-cover {
+		max-width: 280px;
+		margin: 0 auto;
+		font-size: 14px;
+	}
+}
