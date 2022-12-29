@@ -49,7 +49,7 @@ ENV npm_config_target=22.0.0 \
     npm_config_disturl=https://atom.io/download/electron \
     DEBUG=false \
     NODE_ENV=production \
-    NODE_OPTIONS="--max-old-space-size=4096" \
+    NODE_OPTIONS="--max-old-space-size=8192" \
     ELECTRON_VERSION=22.0.0 \
     DISPLAY=:0 \
     IGNORE_GPU_BLACKLIST=false \
