@@ -16,6 +16,6 @@ EXPOSE 8080
 ENV TZ=America/Los_Angeles \
     PAYMENT_PORT=9001 \
     TERMINAL_IP=192.168.31.26 \
-    PORT=80 \
+    PORT=8080 \
     NODE_ENV=production \
     REMOTE_URL=http://www.google.com
