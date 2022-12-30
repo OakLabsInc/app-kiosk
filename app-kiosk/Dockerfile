@@ -11,11 +11,11 @@ COPY . /app
 
 CMD ["node","main.js"]
 
-EXPOSE 8080
+EXPOSE 80
 
 ENV TZ=America/Los_Angeles \
     PAYMENT_PORT=9001 \
     TERMINAL_IP=192.168.31.26 \
-    PORT=8080 \
+    PORT=80 \
     NODE_ENV=production \
     REMOTE_URL=http://www.google.com
