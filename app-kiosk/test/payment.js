@@ -1,10 +1,10 @@
 const { exec } = require('child_process')
-console.log(process.env)
+// console.log(process.env)
 let data = `{"cart":{"total":"40.4","tax":"3.434","taxRate":"0.085","grandTotal":"43.833999999999996"},"terminalIp":"${process.env.TERMINAL_IP}"}`
 
 async function sendCart(payload) {
 
-	await exec(`curl --header "Content-Type: application/json" --request POST --data '${data}' localhost:${process.env.PAYMENT_PORT}`,(err, stdout, stderr) => {
+	await exec(`curl --header "Content-Type: application/json" --request POST --data '${payload}' localhost:${process.env.PAYMENT_PORT}`,(err, stdout, stderr) => {
     if(err) {
       // node couldn't execute the command
       console.log(`Error: ${err}`);
@@ -16,3 +16,5 @@ async function sendCart(payload) {
     console.log(`stderr: ${stderr}`)
   })
 }
+
+sendCart(data)

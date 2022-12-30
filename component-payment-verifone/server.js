@@ -8,7 +8,7 @@ var execFile = require('child_process').execFile
 
 
 const app = express()
-const port = process.env.PORT ? _.toNumber(process.env.PORT) : 9001
+const port = process.env.PAYMENT_PORT ? _.toNumber(process.env.PAYMENT_PORT) : 9001
 
 require('dotenv').config()
 app.use(bodyParser.json());

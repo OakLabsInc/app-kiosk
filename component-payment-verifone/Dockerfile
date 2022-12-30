@@ -12,7 +12,7 @@ COPY . /app
 COPY libPaymentSdk.* /home/rjoffray/verifone/psdk-demo/lib/
 
 RUN npm install --production
-
+EXPOSE 9001
 ENTRYPOINT [ "node" ]
 CMD ["server.js"]
 
