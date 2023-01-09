@@ -23,7 +23,7 @@ var server =  app.listen(port, function () {
 
 app.post('/', function (req, res) {
   // var child = spawn(join(__dirname,"PSDK_Test"));
-  // console.log(req.body)
+  console.log(JSON.stringify(req, null, 2))
 
   // this launches the executable and returns immediately
   console.log("Path: ", join(__dirname,psdk))
