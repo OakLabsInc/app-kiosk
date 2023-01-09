@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 80;
 const _ = require('lodash')
+const axios = require('axios')
 
 app.use(express.static('src/public'));
 
