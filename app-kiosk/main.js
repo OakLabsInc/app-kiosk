@@ -35,7 +35,6 @@ app.get('/sendCart', function (req, res) {
         console.log(`statusCode: ${res.statusCode}`)
         console.log(`statusText: ${res.statusText}`)
         console.log("payment-response: ", res)
-        window.send('payment-response', res)
       })
       .catch(error => {
         console.error(error)

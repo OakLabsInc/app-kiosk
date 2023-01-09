@@ -23,13 +23,13 @@ var server =  app.listen(port, function () {
 
 app.post('/', function (req, res) {
   // var child = spawn(join(__dirname,"PSDK_Test"));
-  console.log(JSON.stringify(req, null, 2))
+  console.log("payment component",JSON.stringify(req, null, 2))
 
   // this launches the executable and returns immediately
   console.log("Path: ", join(__dirname,psdk))
-  console.log("Cart: ", JSON.stringify(req.body.cart))
+  console.log("Cart: ", JSON.stringify(req))
   console.log("IP: ", terminalIp)
-  var child = execFile(join(__dirname, psdk), [JSON.stringify(req.body.cart), req.body.terminalIp],
+  var child = execFile(join(__dirname, psdk), [JSON.stringify(req.data), terminalIp],
 
     function (error, stdout, stderr) {
       if(error) {
