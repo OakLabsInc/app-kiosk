@@ -47,3 +47,9 @@ app.get('/sendCart', function (req, res) {
 })
 
 app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+
+function convertValuesToStringsDeep(obj) {
+    return _.cloneDeepWith(obj, value => {
+      return !_.isPlainObject(value) ? _.toString(value) : undefined;
+    });
+  }
