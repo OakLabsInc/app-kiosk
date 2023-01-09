@@ -9,7 +9,8 @@ var execFile = require('child_process').execFile
 
 const app = express()
 const port = process.env.PAYMENT_PORT ? _.toNumber(process.env.PAYMENT_PORT) : 9001
-
+const psdk = process.env.PSDK_APP ? process.env.PSDK_APP : "PSDK_Test"
+const terminalIp = process.env.TERMINAL_IP ? process.env.TERMINAL_IP : "192.168.31.26"
 require('dotenv').config()
 app.use(bodyParser.json());
 
@@ -25,10 +26,10 @@ app.post('/', function (req, res) {
   // console.log(req.body)
 
   // this launches the executable and returns immediately
-  console.log("Path: ", join(__dirname,"PSDK_Test"))
+  console.log("Path: ", join(__dirname,psdk))
   console.log("Cart: ", JSON.stringify(req.body.cart))
-  console.log("IP: ", req.body.terminalIp)
-  var child = execFile(join(__dirname,"PSDK_Test"), [JSON.stringify(req.body.cart), req.body.terminalIp],
+  console.log("IP: ", terminalIp)
+  var child = execFile(join(__dirname, psdk), [JSON.stringify(req.body.cart), req.body.terminalIp],
 
     function (error, stdout, stderr) {
       if(error) {
@@ -39,7 +40,11 @@ app.post('/', function (req, res) {
       // You'd want to check err/stderr as well!
       console.log("stdout: ", stdout)
       console.log("stderr: ", stderr)
-      res.json(stdout)
+      let out = {
+        'stdout': stdout,
+        'stderr': stderr
+      }
+      res.json(out)
   });
 
 })

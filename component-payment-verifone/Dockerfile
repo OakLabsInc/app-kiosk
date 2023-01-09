@@ -18,4 +18,4 @@ CMD ["server.js"]
 
 ENV TZ=America/Los_Angeles \
     PORT=9001 \
-    APPLICATION_PORT=9000
+    APPLICATION_PORT=80 

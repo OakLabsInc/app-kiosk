@@ -10,7 +10,9 @@ services:
       - /var/run/dbus:/var/run/dbus
     ports:
       - '9631:9631'
-  
+  component-payment-verifone:
+    build: ./component-payment-verifone
+    network_mode: host
   app-kiosk:
     build: ./app-kiosk
     image: oaklabs/app-kiosk:latest
