@@ -1,0 +1,41 @@
+#!/usr/bin/expect
+
+set terminalIp [lindex $argv 0];
+set amount [lindex $argv 1];
+
+spawn ./verifone-demo-app
+expect "Enter request:\r"
+send -- "2\r"
+expect "Enter request:\r"
+send -- "1\r"
+expect "Enter address:\r"
+send -- "$terminalIp\r"
+expect "Enable slim integrated mode"
+send -- "y\r"
+expect "Enter request:\r"
+send -- "1\r"
+expect "LOGIN_COMPLETED"
+expect "Enter request:\r"
+send -- "1\r"
+expect "SESSION_STARTED"
+expect "Enter request:\r"
+send -- "7\r"
+expect "Enter payment amount:\r"
+send -- "$amount\r"
+expect "Awaiting Cash"
+expect "Awaiting Tip"
+expect "NOTIFICATION_EVENT"
+expect "Awaiting PIN"
+expect "Remove Card"
+expect "TRANSACTION_PAYMENT_COMPLETED"
+expect "Enter request:\r"
+send -- "1\r"
+expect "SESSION_ENDED"
+expect "Enter request:\r"
+send -- "2\r"
+expect "LOGOUT_COMPLETED"
+expect "Enter request:\r"
+send -- "2\r"
+expect "Enter request:\r"
+send -- "0\r"
+expect eof

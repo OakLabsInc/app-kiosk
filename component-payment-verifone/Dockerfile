@@ -5,11 +5,11 @@ WORKDIR /app
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
-    && apt-get -yq install --no-install-recommends nodejs npm \
-    && mkdir -p /home/rjoffray/verifone/psdk-demo/lib
+    && apt-get -yq install --no-install-recommends nodejs npm expect\
+    && mkdir -p /home/rjoffray/verifone/linux/lib
 
 COPY . /app
-COPY libPaymentSdk.* /home/rjoffray/verifone/psdk-demo/lib/
+COPY libPaymentSdk.* /home/rjoffray/verifone/linux/lib/
 
 RUN npm install --production
 EXPOSE 9001

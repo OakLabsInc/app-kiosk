@@ -23,7 +23,7 @@ var server =  app.listen(port, function () {
 
 app.get('/sendCart', function (req, res) {
     // This request comes from the html client-side
-    let terminalIp = process.env.TERMINAL_IP || "192.168.31.26"
+    let terminalIp = process.env.TERMINAL_IP || "192.168.31.27"
     let amount = req.query.amount;
 
     let taxRate = .10;
@@ -41,7 +41,7 @@ app.get('/sendCart', function (req, res) {
     console.log("Path: ", join(__dirname,psdk))
     console.log("Cart: ", JSON.stringify(payload))
     console.log("IP: ", terminalIp)
-  var child = execFile(join(__dirname, psdk), [JSON.stringify(payload), terminalIp],
+  var child = execFile(join(__dirname, 'expect.exp'), [terminalIp, amount],
 
     function (error, stdout, stderr) {
       if(error) {
