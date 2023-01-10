@@ -16,19 +16,23 @@ app.get('/sendCart', function (req, res) {
     let paymentHost = process.env.PAYMENT_HOST || "localhost"
     let terminalIp = process.env.TERMINAL_IP || "192.168.31.26"
     let amount = req.query.amount;
+
     let taxRate = .10;
     let tax = amount * taxRate;
     let grandTotal = tax + amount
     let cart = {
-        'total': amount,
-        'tax': tax,
-        'taxRate': taxRate,
-        'grandTotal': grandTotal
-    }
+            'total': amount,
+            'tax': tax,
+            'taxRate': taxRate,
+            'grandTotal': grandTotal
+        }
+        
+    
 
     let payload = convertValuesToStringsDeep(cart)
-
-    console.log(JSON.stringify(payload, null, 4))
+    console.log(payload);
+    //return;
+    console.log("sending...\n",`http://${paymentHost}:${paymentPort}`, JSON.stringify(cart))
    
     axios.post(`http://${paymentHost}:${paymentPort}`, payload)
       .then(res => {
@@ -41,7 +45,7 @@ app.get('/sendCart', function (req, res) {
       })
   res.json({
     message: "Object Sent to payment component",
-    cart: payload
+    data: payload
   })
 
     

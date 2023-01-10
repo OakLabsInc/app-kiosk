@@ -21,15 +21,27 @@ var server =  app.listen(port, function () {
   console.log("Content Provider Service listening at http://%s:%s", host, port);
 })
 
-app.post('/', function (req, res) {
-  // var child = spawn(join(__dirname,"PSDK_Test"));
-  console.log("payment component",JSON.stringify(req, null, 2))
+app.get('/sendCart', function (req, res) {
+    // This request comes from the html client-side
+    let terminalIp = process.env.TERMINAL_IP || "192.168.31.26"
+    let amount = req.query.amount;
 
-  // this launches the executable and returns immediately
-  console.log("Path: ", join(__dirname,psdk))
-  console.log("Cart: ", JSON.stringify(req))
-  console.log("IP: ", terminalIp)
-  var child = execFile(join(__dirname, psdk), [JSON.stringify(req.data), terminalIp],
+    let taxRate = .10;
+    let tax = parseInt(amount) * taxRate;
+    let grandTotal = tax + parseInt(amount)
+    let cart = {
+            'total': amount,
+            'tax': tax,
+            'taxRate': taxRate,
+            'grandTotal': grandTotal.toString()
+        }
+        
+    let payload = convertValuesToStringsDeep(cart)
+
+    console.log("Path: ", join(__dirname,psdk))
+    console.log("Cart: ", JSON.stringify(payload))
+    console.log("IP: ", terminalIp)
+  var child = execFile(join(__dirname, psdk), [JSON.stringify(payload), terminalIp],
 
     function (error, stdout, stderr) {
       if(error) {
@@ -48,4 +60,10 @@ app.post('/', function (req, res) {
   });
 
 })
+
+function convertValuesToStringsDeep(obj) {
+  return _.cloneDeepWith(obj, value => {
+    return !_.isPlainObject(value) ? _.toString(value) : undefined;
+  });
+}
 

@@ -5,6 +5,7 @@
       build: .
       image: oaklabs/component-payment-verifone
       privileged: true
+      
       # devices:
       #   - /dev/dri
       # volumes:
