@@ -30,4 +30,30 @@ Another Balena block that is used to setup.
 
 [WiFi Connect](https://github.com/balena-os/wifi-connect) is a utility for dynamically setting the WiFi configuration on a Linux device via a captive portal. WiFi credentials are specified by connecting with a mobile phone or laptop to the access point that WiFi Connect creates.
 
+## Preview the app-kiosk html
+
+This html is best previewed with the npm module [live-server](https://www.npmjs.com/package/live-server).
+
+#### Installation
+
+You need node.js and npm. You should probably install this globally.
+
+``` bash
+npm install -g live-server
+```
+
+#### Usage
+
+Navigate to the html source directory from the root of this project.
+
+``` bash
+cd app-kiosk/src/public
+```
+
+then start the live-server
+
+```bash
+live-server
+```
+
 
