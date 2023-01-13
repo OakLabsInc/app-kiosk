@@ -34,29 +34,35 @@ docker-compose up --build
 docker-compose down
 ```
 
-## Example Installation
+### Full Terminal APPDEV install
 
-``` json
-{
-  "services": [
-    {
-      "image": "index.docker.io/oaklabs/app-payment:latest",
-      "environment": {
-        "PORT": "9000",
-        "PAYMENT_PORT": "9001",
-        "TERMINAL_IP": "192.168.31.26",
-        "TZ": "America/Los_Angeles"
-      }
-    },
-    {
-      "image": "index.docker.io/oaklabs/component-payment-verifone:latest",
-      "environment": {
-        "PORT": "9001",
-        "APPLICATION_PORT": "9000",
-        "TZ": "America/Los_Angeles"
-      }
-    }
-  ]
-}
+You will need access to Verifone Artifactory
 
-```
+1. download
+
+https://artifactory.verifone.com/artifactory/RMS_Release_CLW/CarbonMobile5/ux700/stable/UX700-Q-4.31.1/secure-signed/fastboot_appdev_UX700-Q-4.31.1_Full_Platform.zip
+
+and 
+
+https://artifactory.verifone.com/artifactory/RMS_Release_CLW/keystone/com/verifone/solution/northamericaslim/CacheNaSlimAllDefaultDevkit/5.331.3/CacheNaSlimAllDefaultDevkit-5.331.3.img
+
+you can't do fastboot over WiFi but you can do adb over WiFi
+
+after unzipping the `fastboot_appdev_UX700-Q-4.31.1_Full_Platform.zip` put the `CacheNaSlimAllDefaultDevkit-5.331.3.img` file inside full install folder 
+
+2. then `adb reboot fastboot`
+
+3. then you do this in terminal while in the full install folder   
+
+`flash-all-ux700-full.sh -F CacheNaSlimAllDefaultDevkit-5.331.3.img`
+
+4. then `fastboot reboot` and wait till secondary install happens
+
+I had to do this to get all the right apps installed
+
+`adb reboot fastboot`
+
+then `fastboot flash cache CacheNaSlimAllDefaultDevkit-5.331.3.img`
+
+then `fastboot reboot`
+
